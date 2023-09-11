@@ -34,6 +34,10 @@ int  main(){
 		std::cout << "Which cell to mark? i:[0..2], j:[0..2]: "; 
 		//
 		std::cin >> i >> j;
+		while(game[i][j] == 'X' || game[i][j] == 'O' || i<0 || i > 2 || j <0 || j > 2){
+            		cout << "Invalid! Retry" << endl;
+           		std::cin >> i >> j;
+      		}
 		if (turn == false)
 		   game[i][j] = 'X';
 		else 
@@ -42,6 +46,7 @@ int  main(){
 			std::cout << "Win!" << std::endl;
 			break; // need to terminate the problem
 		}
+		i=3;
 	}
 	if (i==3) // all celles with i=0 to 2 have been inputted above but no winner yet
 	   std::cout << "Tie!" << std::endl;
